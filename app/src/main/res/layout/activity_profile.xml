@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. BACKGROUND WALLPAPER -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/i7"
+        android:scaleType="centerCrop"
+        />
+
+    <!-- 2. SCROLLABLE CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Profile Image -->
+            <!-- ADDED marginTop="40dp" HERE to push it down -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="40dp"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <ImageView
+                    android:layout_width="121dp"
+                    android:layout_height="130dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Bienvenue !"
+                android:textColor="#A999FF"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <!-- Score Badge -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="30dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardElevation="0dp">
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Score : 0 pts"
+                    android:textColor="#2E7D32"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- MENU GRID -->
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Button 1: Apprendre -->
+                    <Button
+                        android:id="@+id/btnLearn"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Apprendre"
+                        android:textSize="16sp"
+                        android:backgroundTint="#FF9800"
+                        android:drawableTop="@android:drawable/ic_menu_agenda"
+                        android:padding="20dp"
+                        app:cornerRadius="16dp"
+                        android:elevation="4dp"/>
+
+                    <!-- Button 2: Quiz -->
+                    <Button
+                        android:id="@+id/btnStartQuiz"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Quiz"
+                        android:textSize="16sp"
+                        android:backgroundTint="#673AB7"
+                        android:drawableTop="@android:drawable/ic_menu_help"
+                        android:padding="20dp"
+                        app:cornerRadius="16dp"
+                        android:elevation="4dp"/>
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Button 3: Dashboard -->
+                    <Button
+                        android:id="@+id/btnDashboard"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Dashboard"
+                        android:textSize="16sp"
+                        android:backgroundTint="#00BCD4"
+                        android:drawableTop="@android:drawable/ic_menu_my_calendar"
+                        android:padding="20dp"
+                        app:cornerRadius="16dp"
+                        android:elevation="4dp"/>
+
+                    <!-- Button 4: Favoris -->
+                    <Button
+                        android:id="@+id/btnFavorites"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Favoris"
+                        android:textSize="16sp"
+                        android:backgroundTint="#FF5C79"
+                        android:drawableTop="@android:drawable/btn_star_big_on"
+                        android:padding="20dp"
+                        app:cornerRadius="16dp"
+                        android:elevation="4dp"/>
+                </LinearLayout>
+
+                <!-- Button: Badges -->
+                <Button
+                    android:id="@+id/btnBadges"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="🏆 Mes Badges"
+                    android:textSize="18sp"
+                    android:backgroundTint="#FFD700"
+                    app:cornerRadius="16dp"
+                    android:elevation="4dp"/>
+
+                <!-- Button: Detection -->
+                <Button
+                    android:id="@+id/btnStartDetection"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="📷 Démarrer Détection IA"
+                    android:textSize="18sp"
+                    android:backgroundTint="#8BC34A"
+                    app:cornerRadius="16dp"
+                    android:elevation="4dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 3. FLOATING LOGOUT ICON (TOP RIGHT) -->
+    <ImageButton
+        android:id="@+id/btnLogout"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/logout"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        android:contentDescription="Se déconnecter" />
+
+</FrameLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Network Permission (CRITICAL for Roboflow API) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permissions for reading images from gallery -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- Optional: Camera permission if you plan to add "Take Photo" later -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- ADD THIS: Declares that the app uses the camera, but doesn't strictly require it to install -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EduCode"
+        tools:targetApi="31">
+
+        <!-- 1. WELCOME ACTIVITY (Launcher) -->
+        <activity
+            android:name=".ui.auth.WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 2. AUTH ACTIVITIES -->
+        <activity android:name=".ui.auth.LoginActivity" android:exported="false" />
+        <activity android:name=".ui.auth.RegisterActivity" android:exported="false" />
+
+        <!-- 3. MAIN APP ACTIVITIES -->
+        <activity android:name=".ui.main.MainActivity" android:exported="false" />
+        <activity android:name=".ui.main.ProfileActivity" android:exported="false"/>
+
+        <!-- 4. LEARN & QUIZ ACTIVITIES -->
+        <activity android:name=".ui.learn.CategoryActivity" android:exported="false" />
+        <activity android:name=".ui.learn.SignListActivity" android:exported="false" />
+        <activity android:name=".ui.learn.SignDetailActivity" android:exported="false" />
+        <activity android:name=".ui.learn.FlashcardActivity" android:exported="false" />
+        <activity android:name=".ui.learn.FavoritesActivity" android:exported="false" android:label="Mes Favoris"/>
+
+        <activity android:name=".ui.quiz.QuizActivity" android:exported="false"/>
+        <activity android:name=".ui.quiz.ResultActivity" android:exported="false"/>
+
+        <!-- 5. DASHBOARD -->
+        <activity android:name=".ui.dashboard.DashboardActivity" android:label="Tableau de Bord" android:exported="false"/>
+        <activity android:name=".ui.dashboard.BadgesActivity" android:label="Mes Badges" android:exported="false"/>
+
+        <activity
+            android:name=".ui.history.DetectionsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.main.MainActivity" />
+    </application>
+
+</manifest>

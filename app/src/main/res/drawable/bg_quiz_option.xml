@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State: Pressed (Darker Purple) -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#EDE7F6" /> <!-- Light Purple tint -->
+            <corners android:radius="30dp" />
+            <stroke android:width="2dp" android:color="#673AB7" />
+        </shape>
+    </item>
+
+    <!-- State: Default (White with Border) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="30dp" />
+            <stroke android:width="2dp" android:color="#D1C4E9" /> <!-- Light Purple Border -->
+        </shape>
+    </item>
+</selector>

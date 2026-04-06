@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 1. BACKGROUND WALLPAPER -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/i3"
+        android:scaleType="centerCrop"
+        android:alpha="1" />
+    <!-- Changed alpha to 0.9 for brightness -->
+
+    <!-- 2. MAIN REGISTER CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+        <!-- LOGO (Use @drawable, not @mipmap) -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- THE TITLE -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:text="Créer un compte"
+            android:textSize="32sp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#FF5858"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etRegUser"
+            android:hint="Nom d'utilisateur"
+            android:background="@drawable/input_selector"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etRegPass"
+            android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:background="@drawable/input_selector"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etRegConfirmPass"
+            android:hint="Confirmer le mot de passe"
+            android:inputType="textPassword"
+            android:background="@drawable/input_selector"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="S'inscrire"
+            android:backgroundTint="#BEC4E4"
+            android:textColor="#333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</FrameLayout>

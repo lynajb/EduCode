@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Large Sign Image -->
+        <ImageView
+            android:id="@+id/imgDetailSign"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Sign Name -->
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom du Panneau"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvDetailDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description complète du panneau..."
+            android:textSize="18sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#666"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- Action Buttons -->
+        <Button
+            android:id="@+id/btnFav"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Ajouter aux favoris"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFF"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnStartFlashcards"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Révision Rapide (Flashcards)"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFF"/>
+
+    </LinearLayout>
+</ScrollView>

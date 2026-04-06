@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- HEADER SECTION (Unchanged) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00BCD4"
+            android:padding="24dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvDashTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tableau de Bord"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"/>
+
+                    <TextView
+                        android:id="@+id/tvDashSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Suivez votre progression"
+                        android:textSize="14sp"
+                        android:textColor="#E0F7FA"/>
+                </LinearLayout>
+
+                <!-- STREAK COUNTER -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_text"
+                    android:backgroundTint="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:id="@+id/tvStreak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥 0 Jours"
+                        android:textColor="#FF5722"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CONTENT SECTION -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- EXISTING BADGE CARD (Unchanged) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBadge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/imgBadge"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_marginEnd="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Niveau Actuel"
+                            android:textSize="12sp"
+                            android:textColor="#B2BEC3"
+                            android:textAllCaps="true"/>
+
+                        <TextView
+                            android:id="@+id/tvBadgeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Débutant"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="#CD7F32"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- EXISTING PROGRESS BAR (Unchanged) -->
+            <TextView
+                android:text="Progression vers le niveau Maître"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"
+                android:textColor="#2D3436"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarMaster"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:max="100"
+                android:progress="30"
+                android:progressDrawable="@drawable/progress_horizontal"/>
+
+            <TextView
+                android:id="@+id/tvProgressPercent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30%"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:textColor="#636E72"/>
+
+            <!-- EXISTING STATS GRID (Unchanged) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Row 1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvStatSigns"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#0984E3"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Panneaux"
+                                android:textSize="12sp"
+                                android:textColor="#636E72"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvStatQuiz"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#6C5CE7"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Quiz Faits"
+                                android:textSize="12sp"
+                                android:textColor="#636E72"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+                <!-- Row 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvStatBestScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#00B894"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Meilleur Score"
+                                android:textSize="12sp"
+                                android:textColor="#636E72"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvStatDetection"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="#E17055"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Détections"
+                                android:textSize="12sp"
+                                android:textColor="#636E72"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NEW: WEEKLY ACTIVITY CHART (Visual Curve/Bar Representation) -->
+            <TextView
+                android:text="Activité Hebdomadaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:textStyle="bold"
+                android:textColor="#2D3436"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Simple Bar Chart Container -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:orientation="horizontal"
+                        android:gravity="bottom"
+                        android:weightSum="7">
+
+                        <!-- Day 1 (Mon) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barMon"
+                                android:layout_width="12dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/>
+                            <TextView
+                                android:text="L"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <!-- Day 2 (Tue) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barTue"
+                                android:layout_width="12dp"
+                                android:layout_height="60dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/>
+                            <TextView
+                                android:text="M"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <!-- Day 3 (Wed) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barWed"
+                                android:layout_width="12dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/>
+                            <TextView
+                                android:text="M"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <!-- Day 4 (Thu) - CORRECTED -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barThu"
+                                android:layout_width="12dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/> <!-- CHANGED TO GRAY -->
+                            <TextView
+                                android:text="J"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/> <!-- REMOVED BOLD -->
+                        </LinearLayout>
+
+                        <!-- Day 5 (Fri) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barFri"
+                                android:layout_width="12dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/>
+                            <TextView
+                                android:text="V"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <!-- Day 6 (Sat) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barSat"
+                                android:layout_width="12dp"
+                                android:layout_height="90dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/>
+                            <TextView
+                                android:text="S"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <!-- Day 7 (Sun) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+                            <View
+                                android:id="@+id/barSun"
+                                android:layout_width="12dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/bg_rounded_bar"
+                                android:backgroundTint="#E0E0E0"/>
+                            <TextView
+                                android:text="D"
+                                android:textSize="10sp"
+                                android:textColor="#999"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- EXISTING MISTAKES SECTION (Unchanged) -->
+            <TextView
+                android:text="À Revoir (Erreurs Fréquentes)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
+                android:textStyle="bold"
+                android:textColor="#2D3436"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/layoutMistakes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvNoMistakes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aucune erreur récente ! Bravo 🎉"
+                        android:textColor="#999"
+                        android:padding="10dp"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <!-- 1. MODERN HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#673AB7"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="32dp"
+        android:orientation="vertical"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quiz Code de la Route"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tvProgressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 / 10"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#D1C4E9"
+                android:background="@drawable/bg_rounded_text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+        </LinearLayout>
+
+        <!-- Thicker, Rounded Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBarQuiz"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="16dp"
+            android:max="10"
+            android:progress="1"
+            android:progressDrawable="@drawable/progress_horizontal" />
+
+    </LinearLayout>
+
+    <!-- 2. SCROLLABLE CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- QUESTION CARD -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="32dp">
+                <!-- CHANGED: Removed negative margin (-20dp) and added positive margin (10dp) -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Image Container -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="#F3E5F5">
+                        <!-- CHANGED: Increased height to 200dp -->
+
+                        <ImageView
+                            android:id="@+id/imgQuizQuestion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitCenter"
+                            android:padding="24dp"
+                            android:src="@mipmap/ic_launcher" />
+                        <!-- CHANGED: Increased padding to 24dp to center it better -->
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvQuizQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="24dp"
+                        android:gravity="center"
+                        android:text="Quelle est la signification de ce panneau ?"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:lineSpacingExtra="4dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ANSWER BUTTONS -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOptionA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:text="Option A"
+                android:background="@drawable/bg_quiz_option"
+                android:textColor="#512DA8"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="16dp"
+                android:elevation="2dp"
+                android:stateListAnimator="@null"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOptionB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:text="Option B"
+                android:background="@drawable/bg_quiz_option"
+                android:textColor="#512DA8"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:layout_marginBottom="16dp"
+                android:elevation="2dp"
+                android:stateListAnimator="@null"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOptionC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:text="Option C"
+                android:background="@drawable/bg_quiz_option"
+                android:textColor="#512DA8"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:elevation="2dp"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
